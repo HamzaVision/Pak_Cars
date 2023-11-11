@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  background-color: #033148;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+}
+
+.navtitle img {
+  margin-left: 10px;
+  align-self: center;
+  height: 40px;
+}
+
+.navlist ul {
+  list-style: none;
+  display: flex;
+  margin-top: 10px;
+}
+
+.navlist ul li {
+  margin-right: 20px;
+}
+
+.navlist ul li a {
+  text-decoration: none;
   color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.post-ad-button {
+  background-color: #f68300;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbtn button {
+  background-color: #f68300;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.vertical-line {
+  width: 3px;
+  margin: 0px;
+  height: 20px;
+  background-color: white;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+
+@media (max-width: 600px) {
+  .navlist {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #033148;
+    border-radius: 5px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navlist.open {
+    display: block;
+  }
+
+  .navlist ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navlist ul li {
+    margin: 10px 0;
+  }
+
+  .vertical-line {
+    width: 200px;
+    height: 2px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.open .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 }
