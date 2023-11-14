@@ -193,3 +193,78 @@ footer {
     width: 48%; /* Adjust the width as needed */
   }
 }
+
+/* sign up styles */
+
+.signUpContainer {
+  background-color: #1f485b;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: left;
+  font-size: 20px;
+  color: #837f7f;
+  font-family: Poppins;
+  display: flex;
+}
+
+.backgroundOverlay {
+  border-radius: 47px 0px 0px 47px;
+  background-color: #fff;
+  width: 65%;
+}
+
+.titleContainer {
+  margin-top: 30px;
+  margin-left: 32px;
+  font-size: 64px;
+  line-height: 20px;
+  font-weight: 800;
+  font-family: Roboto;
+  color: #fff;
+  display: inline-block;
+  width: 500px;
+}
+
+.titleText {
+  margin-block-start: 0px;
+  margin-block-end: 50px;
+  letter-spacing: 0.08em;
+  line-height: 65px;
+}
+
+.backgroundImage {
+  margin-top: 100px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+@media (max-width: 800px) {
+  .signUpContainer {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .backgroundOverlay{
+    width: 100%;
+    border-radius: 47px 47px 0px 0px;
+  }
+
+  .titleContainer{
+    width: fit-content;
+    font-size: 40px;
+    line-height: 0px;
+    margin-top: 20px;
+  }
+
+  .titleText{
+    line-height: 45px;
+    margin-bottom: 10px;
+  }
+
+  .backgroundImage{
+    margin-top: 0px;
+  }
+  
+}
