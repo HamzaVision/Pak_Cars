@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function SignUp() {
+export default function SignIn() {
   return (
     <div className="signUpContainer">
       <div className="titleContainer">
         <p className="titleText">
-          Getting <br />
-          Started With <br />
+          Welcome <br />
+          Back To <br />
           PakCar
         </p>
 
@@ -21,7 +21,7 @@ export default function SignUp() {
       <div className="backgroundOverlay">
         <form action="" method="post">
           <div style={styles.inputContainer}>
-            <div style={styles.createAccountText}>Create Account</div>
+            <div style={styles.createAccountText}>Login to your Account</div>
             <div style={styles.label}>
               <input
                 style={styles.labelInput}
@@ -49,28 +49,19 @@ export default function SignUp() {
                 placeholder="Password"
               />
             </div>
-            <div style={styles.label}>
-              <input
-                style={styles.labelInput}
-                type="password"
-                name="confirm-password"
-                id="confirm-password"
-                placeholder="Confirm Password"
-              />
-            </div>
 
             <button style={styles.createAccountButton} type="button">
-              Create Account
+              LogIn
             </button>
 
             <div style={styles.loginLink}>
-              Already have an account?
+              Don’t have an account?
               <Link
-                to="/login"
+                to="/signup"
                 style={{ textDecoration: "underline", color: "#1f485b" }}
               >
                 {" "}
-                Log In
+                Sign-up
               </Link>
             </div>
           </div>
@@ -92,10 +83,11 @@ const styles = {
     marginBottom: "30px",
     fontSize: "40px",
     letterSpacing: "0.08em",
-    lineHeight: "35px",
+    lineHeight: "40px",
     fontWeight: "800",
     fontFamily: "Roboto",
     color: "#000",
+    textAlign: "center",
   },
   label: {
     margin: "30px 0px 0px 0px",
