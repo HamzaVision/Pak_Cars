@@ -21,14 +21,16 @@
 }
 
 .navlist ul li {
-  margin-right: 20px;
+  margin-right: 15px;
+  text-align: center;
 }
 
 .navlist ul li a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
 
 .post-ad-button {
@@ -68,7 +70,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .navlist {
     display: none;
     position: absolute;
@@ -267,4 +269,336 @@ footer {
     margin-top: 0px;
   }
   
+}
+
+/* home page */
+
+.rectangleBannerDiv {
+  background-color: #143f54;
+  /* width: 1440px; */
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+}
+
+.greatQualityCars {
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 20px 0px 0px 80px;
+}
+
+.greatQualityCars span {
+  color: #e53333;
+}
+
+.imageCont{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;  
+}
+
+.container11Icon {
+  width: 50%;
+}
+
+.searchBoxRectangle {
+  background-color: #fff;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px;
+
+  color: #000;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.findUsedCar {
+  font-size: 50px;
+  margin-top: 60px;
+}
+
+.thousandsOfNew {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.searchBox {  
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carMakeOr {
+  border: 3px solid #143f54;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px 15px;
+  color: #afafaf;
+  width: 100%;
+}
+
+/*  */
+
+.browseUsedCarsBox{
+  background-color: #F2F3F3;
+  padding: 20px;
+}
+
+.browseUsedCars{
+  color: #143F54;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 0px 0px 0px 50px;
+}
+
+.usedCarCards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.usedCarCard{
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #FFF;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px;
+}
+
+.usedCarCard img{
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+}
+
+.usedCarName {
+  color: #324A84;
+  margin: 10px 0px 0px 10px;
+}
+
+.usedCarPrice{
+  color: #52BD5C;
+  margin: 10px 0px 0px 10px;
+}
+
+.usedCarCity{
+  color: #afafaf;
+  margin: 10px;
+
+}
+
+.newCarCards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.newCarCard{
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #FFF;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px;
+  text-align: center;
+}
+
+.newCarCard img{
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+}
+
+.newCarName {
+  color: #324A84;
+  margin: 10px 10px 0px 10px;
+}
+
+.newCarPrice{
+  color: #52BD5C;
+  margin: 10px 10px 0px 10px;
+}
+
+.newCarCity{
+  color: #afafaf;
+  margin: 10px;
+}
+
+/* -------------------------- */
+.rectangleParent1{
+  height: 613.024px;
+  flex-shrink: 0;
+  background: #143F54;
+  padding: 20px;
+}
+
+.carshopFeaturebox1Icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+.carshopFeaturebox1Icon img{
+  width: 40%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.stepInsideYourContainer{
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+}
+
+.stepInsideYourContainer p{
+  margin: 20px;
+}
+
+.stepInsideYourContainer span{
+  color: #E53333;
+}
+
+.fearureTray{
+  display: flex;
+  flex-direction: row;
+}
+
+.compFeature{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin-top: 30px;
+  color: #FFF;
+  font-family: Roboto;
+  font-style: normal;
+  line-height: normal;
+}
+
+.compFeature img{
+  width: 50px;
+  margin-right: 10px;
+}
+
+.compFeature h6{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0px 20px 0px 10px;
+}
+
+.compFeature p{
+  font-size: 16px;
+  font-weight: 400;
+  margin: 20px 20px 0px 10px;
+}
+
+/* ------- */
+
+.sectionBrand{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textBrand{
+  color: #000;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+}
+
+.carToggle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 25px;
+  background: #F2F2F2;
+  width: 230px;
+  padding: 5px;
+}
+
+.newCarOn{
+  border-radius: 25px;
+  background-color: #143F54;
+  color: #FFF;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.usedCarOn{
+  border-radius: 25px;
+  background-color: #F2F2F2;
+  color: #143F54;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brandContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.carBrand{
+  width: 200px;
+  height: 170px;
+  /* flex-shrink: 0; */
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color:#0889C9;
+}
+
+.carBrand img{
+  width: 100px;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+}
+
+.carBrand p{
+  color: #FFF;
+  margin: 10px;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 700;
+  text-align: center;
 }
