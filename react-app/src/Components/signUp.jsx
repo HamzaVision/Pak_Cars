@@ -29,6 +29,7 @@ export default function SignUp() {
                 name="fullname"
                 id="fullname"
                 placeholder="Full Name"
+                required
               />
             </div>
             <div style={styles.label}>
@@ -38,6 +39,7 @@ export default function SignUp() {
                 name="email"
                 id="email"
                 placeholder="Email"
+                required
               />
             </div>
             <div style={styles.label}>
@@ -47,6 +49,7 @@ export default function SignUp() {
                 name="password"
                 id="password"
                 placeholder="Password"
+                required
               />
             </div>
             <div style={styles.label}>
@@ -56,10 +59,11 @@ export default function SignUp() {
                 name="confirm-password"
                 id="confirm-password"
                 placeholder="Confirm Password"
+                required
               />
             </div>
 
-            <button style={styles.createAccountButton} type="button">
+            <button style={styles.createAccountButton} type="submit">
               Create Account
             </button>
 
