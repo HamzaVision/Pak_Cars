@@ -3,11 +3,31 @@ const jwt = require("jsonwebtoken");
 
 // Create a new User
 async function createUser(req, res) {
+  const { Username, Password, Email } = req.body;
+
   try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
+    // Check if a user with the same email already exists
+    const existingUser = await User.findOne({ Email });
+    console.log(existingUser);
+    if (existingUser) {
+      // If user already exists, send a message indicating that the email is already in use
+      return res.status(400).json({ error: "Email is already in use" });
+    }
+
+    // If the user does not exist, create a new user
+    const newUser = await User.create({
+      Username,
+      Password,
+      Email,
+      // Add other fields as needed
+    });
+
+    // Send a success response
+    res.status(201).json(newUser);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    // Handle any other errors that occurred during the user creation process
+    console.error("Error creating user:", err);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 }
 

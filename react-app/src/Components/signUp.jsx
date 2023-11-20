@@ -1,7 +1,84 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root"); // Set the root element for accessibility
 
 export default function SignUp() {
+  // history object to redirect to another route
+  const history = useHistory();
+
+  // form data
+  const [formData, setFormData] = useState({
+    Username: "",
+    Password: "",
+    Email: "",
+    // Add other form fields as needed
+  });
+
+  const [password, setPassword] = useState({
+    ConfirmPassword: "",
+  });
+
+  const [error, setError] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  //
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword({
+      ...password,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // check the password and confirm-password is same
+    if (formData.Password !== password.ConfirmPassword) {
+      // setError("Password and Confirm Password must match");
+      // setModalIsOpen(true);
+      window.alert("Password and Confirm Password must match");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3005/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Handle success, e.g., redirect or show a success message
+        console.log("User added successfully");
+        history.push("/"); // route of your home page
+      } else {
+        // Handle error, e.g., show an error message
+        const data = await response.json();
+        window.alert(data.error);
+        // setError(data.error);
+        // setModalIsOpen(true);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setError("");
+  };
+
   return (
     <div className="signUpContainer">
       <div className="titleContainer">
@@ -19,15 +96,17 @@ export default function SignUp() {
       </div>
 
       <div className="backgroundOverlay">
-        <form action="" method="post">
+        <form onSubmit={handleSubmit}>
           <div style={styles.inputContainer}>
             <div style={styles.createAccountText}>Create Account</div>
             <div style={styles.label}>
               <input
                 style={styles.labelInput}
                 type="text"
-                name="fullname"
-                id="fullname"
+                name="Username"
+                id="Username"
+                value={formData.Username}
+                onChange={handleInputChange}
                 placeholder="Full Name"
                 required
               />
@@ -36,8 +115,10 @@ export default function SignUp() {
               <input
                 style={styles.labelInput}
                 type="email"
-                name="email"
-                id="email"
+                name="Email"
+                id="Email"
+                value={formData.Email}
+                onChange={handleInputChange}
                 placeholder="Email"
                 required
               />
@@ -46,8 +127,10 @@ export default function SignUp() {
               <input
                 style={styles.labelInput}
                 type="password"
-                name="password"
-                id="password"
+                name="Password"
+                id="Password"
+                value={formData.Password}
+                onChange={handleInputChange}
                 placeholder="Password"
                 required
               />
@@ -56,8 +139,10 @@ export default function SignUp() {
               <input
                 style={styles.labelInput}
                 type="password"
-                name="confirm-password"
-                id="confirm-password"
+                name="ConfirmPassword"
+                id="ConfirmPassword"
+                value={password.ConfirmPassword}
+                onChange={handlePasswordChange}
                 placeholder="Confirm Password"
                 required
               />
@@ -80,6 +165,31 @@ export default function SignUp() {
           </div>
         </form>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Error Modal"
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+          },
+          content: {
+            width: "300px",
+            margin: "auto",
+            marginTop: "100px",
+            borderRadius: "5px",
+            padding: "20px",
+            backgroundColor: "#fff",
+          },
+        }}
+      >
+        <div>
+          <p style={{ color: "red" }}>{error}</p>
+          <button onClick={closeModal} style={{ marginTop: "10px" }}>
+            Close
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }
