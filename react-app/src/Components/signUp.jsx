@@ -13,7 +13,6 @@ export default function SignUp() {
     Username: "",
     Password: "",
     Email: "",
-    // Add other form fields as needed
   });
 
   const [password, setPassword] = useState({
@@ -61,7 +60,7 @@ export default function SignUp() {
       if (response.ok) {
         // Handle success, e.g., redirect or show a success message
         console.log("User added successfully");
-        history.push("/"); // route of your home page
+        history.push("/home"); // route of your home page
       } else {
         // Handle error, e.g., show an error message
         const data = await response.json();
@@ -155,7 +154,7 @@ export default function SignUp() {
             <div style={styles.loginLink}>
               Already have an account?
               <Link
-                to="/login"
+                to="/"
                 style={{ textDecoration: "underline", color: "#1f485b" }}
               >
                 {" "}

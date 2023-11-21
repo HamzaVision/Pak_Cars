@@ -39,7 +39,7 @@ export default function Navbar() {
             <div className="vertical-line"></div>
           </li>
           <li>
-            <Link to="/LogIn" className="post-ad-button">
+            <Link to="/" className="post-ad-button">
               Sign In
             </Link>
           </li>

@@ -16,7 +16,7 @@ router.put("/users/:id", userController.updateUser);
 router.delete("/users/:id", userController.deleteUser);
 
 // login
-// router.post("/login", userController.login);
+router.post("/login", userController.login);
 
 // router.post("/admin", authValidate.validateToken, userController.admindasbhard);
 
