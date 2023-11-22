@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema(
   {
     // UserId: { type: String, required: true },
-    Username: { type: String, required: true },
-    Password: { type: String, required: true },
-    Email: { type: String, required: true },
-    Role: {
+    username: { type: String, required: true },
+    password: { type: String, required: true },
+    email: { type: String, required: true },
+    role: {
       type: String,
       required: true,
       default: "User",
       enum: ["Admin", "User"],
     },
-    IsActive: { type: Boolean, default: true },
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

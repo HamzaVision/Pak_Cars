@@ -3,11 +3,11 @@ const jwt = require("jsonwebtoken");
 
 // Create a new User
 async function createUser(req, res) {
-  const { Username, Password, Email } = req.body;
+  const { username, password, email } = req.body;
 
   try {
     // Check if a user with the same email already exists
-    const existingUser = await User.findOne({ Email });
+    const existingUser = await User.findOne({ email });
     console.log(existingUser);
     if (existingUser) {
       // If user already exists, send a message indicating that the email is already in use
@@ -16,8 +16,9 @@ async function createUser(req, res) {
 
     // If the user does not exist, create a new user
     const newUser = await User.create({
-      Password,
-      Email,
+      username,
+      password,
+      email,
       // Add other fields as needed
     });
 
@@ -84,18 +85,18 @@ async function admindasbhard(req, res) {
 // login a User
 async function login(req, res, next) {
   console.log(req.body);
-  const { Email, Password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.findOne({ Email });
-    console.log(Email);
+    const user = await User.findOne({ email });
+    console.log(email);
     if (!user) return res.status(404).json({ error: "User not found" });
-    console.log(user.Password + "  " + Password);
-    if (user.Password != Password)
+    console.log(user.password + "  " + password);
+    if (user.password != password)
       return res.status(401).json({ error: "Invalid credentials" });
     var token = GenerateToken(user);
     return res.status(200).json({
       message: "User logged in successfully",
-      email: user.Email,
+      email: user.email,
       userid: user._id,
       token: token,
     });
