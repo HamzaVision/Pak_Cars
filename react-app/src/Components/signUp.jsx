@@ -60,7 +60,10 @@ export default function SignUp() {
       if (response.ok) {
         // Handle success, e.g., redirect or show a success message
         console.log("User added successfully");
-        history.push("/home"); // route of your home page
+        const data = await response.json();
+        console.log(data);
+        const loggedInUserId = data._id;
+        history.push(`/home/${loggedInUserId}`); // route of your home page
       } else {
         // Handle error, e.g., show an error message
         const data = await response.json();

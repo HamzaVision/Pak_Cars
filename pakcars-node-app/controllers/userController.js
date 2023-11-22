@@ -8,6 +8,7 @@ async function createUser(req, res) {
   try {
     // Check if a user with the same email already exists
     const existingUser = await User.findOne({ email });
+    console.log("Sign UP");
     console.log(existingUser);
     if (existingUser) {
       // If user already exists, send a message indicating that the email is already in use
@@ -88,6 +89,7 @@ async function login(req, res, next) {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
+    console.log("Login");
     console.log(email);
     if (!user) return res.status(404).json({ error: "User not found" });
     console.log(user.password + "  " + password);

@@ -11,7 +11,7 @@ export default function SignIn() {
     Email: "",
   });
 
-  //
+  // handle input change
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -19,6 +19,7 @@ export default function SignIn() {
     });
   };
 
+  // handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -29,7 +30,7 @@ export default function SignIn() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          Email: formData.Email, // Replace with your actual form data
+          Email: formData.Email,
           Password: formData.Password,
         }),
       });
@@ -37,7 +38,10 @@ export default function SignIn() {
       if (response.ok) {
         // Handle successful login, e.g., redirect to home page
         console.log("Login successful");
-        history.push("/home"); // route of your home page
+        const data = await response.json();
+        console.log(data);
+        const loggedInUserId = data.userid;
+        history.push(`/home/${loggedInUserId}`); // route of home page
       } else {
         // Handle login failure, e.g., display an error message
         console.error("Login failed");

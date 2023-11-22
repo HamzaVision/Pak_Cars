@@ -69,7 +69,6 @@
   margin: 3px 0;
 }
 
-
 @media (max-width: 680px) {
   .navlist {
     display: none;
@@ -118,13 +117,12 @@
   }
 }
 
-
 /* footer */
 
 footer {
   display: flex;
   flex-direction: column;
-  background-color: #143F54;
+  background-color: #143f54;
   color: white;
   padding: 20px;
 }
@@ -145,7 +143,7 @@ footer {
 
 .footerContactUs {
   width: 90%;
-  background-color: #28282B;
+  background-color: #28282b;
   border-radius: 10px;
   padding: 0px 40px 20px 40px;
 }
@@ -159,31 +157,32 @@ footer {
   margin-bottom: 10px;
 }
 
-.footerLinks ul li Link,a {
+.footerLinks ul li Link,
+a {
   color: white;
   text-decoration: none;
   font-family: bahnschrift;
   font-size: 18px;
 }
 
-.footerContactUs h2{
+.footerContactUs h2 {
   text-align: center;
 }
 
-.footerContactUs label{
+.footerContactUs label {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.footerContactUs input, textarea{
+.footerContactUs input,
+textarea {
   width: 100%;
   border-radius: 5px;
   border: none;
   margin-bottom: 10px;
   font-size: 18px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
-
 
 /* Responsive styles */
 @media (min-width: 768px) {
@@ -248,27 +247,26 @@ footer {
     height: 100%;
   }
 
-  .backgroundOverlay{
+  .backgroundOverlay {
     width: 100%;
     border-radius: 47px 47px 0px 0px;
   }
 
-  .titleContainer{
+  .titleContainer {
     width: fit-content;
     font-size: 40px;
     line-height: 0px;
     margin-top: 20px;
   }
 
-  .titleText{
+  .titleText {
     line-height: 45px;
     margin-bottom: 10px;
   }
 
-  .backgroundImage{
+  .backgroundImage {
     margin-top: 0px;
   }
-  
 }
 
 /* home page */
@@ -282,7 +280,7 @@ footer {
 }
 
 .greatQualityCars {
-  color: #FFF;
+  color: #fff;
   font-family: Roboto;
   font-size: 60px;
   font-style: normal;
@@ -295,10 +293,10 @@ footer {
   color: #e53333;
 }
 
-.imageCont{
+.imageCont {
   display: flex;
   flex-direction: row;
-  justify-content: right;  
+  justify-content: right;
 }
 
 .container11Icon {
@@ -331,7 +329,7 @@ footer {
   margin-top: 10px;
 }
 
-.searchBox {  
+.searchBox {
   width: 50%;
   height: 40px;
   display: flex;
@@ -351,13 +349,13 @@ footer {
 
 /*  */
 
-.browseUsedCarsBox{
-  background-color: #F2F3F3;
+.browseUsedCarsBox {
+  background-color: #f2f3f3;
   padding: 20px;
 }
 
-.browseUsedCars{
-  color: #143F54;
+.browseUsedCars {
+  color: #143f54;
   font-family: Roboto;
   font-size: 36px;
   font-style: normal;
@@ -366,18 +364,18 @@ footer {
   margin: 0px 0px 0px 50px;
 }
 
-.usedCarCards{
+.usedCarCards {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 
-.usedCarCard{
+.usedCarCard {
   width: 200px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: #FFF;
+  background: #fff;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -386,40 +384,39 @@ footer {
   margin: 10px;
 }
 
-.usedCarCard img{
+.usedCarCard img {
   width: 100%;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
 }
 
 .usedCarName {
-  color: #324A84;
+  color: #324a84;
   margin: 10px 0px 0px 10px;
 }
 
-.usedCarPrice{
-  color: #52BD5C;
+.usedCarPrice {
+  color: #52bd5c;
   margin: 10px 0px 0px 10px;
 }
 
-.usedCarCity{
+.usedCarCity {
   color: #afafaf;
   margin: 10px;
-
 }
 
-.newCarCards{
+.newCarCards {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 
-.newCarCard{
+.newCarCard {
   width: 200px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: #FFF;
+  background: #fff;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -429,32 +426,32 @@ footer {
   text-align: center;
 }
 
-.newCarCard img{
+.newCarCard img {
   width: 100%;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
 }
 
 .newCarName {
-  color: #324A84;
+  color: #324a84;
   margin: 10px 10px 0px 10px;
 }
 
-.newCarPrice{
-  color: #52BD5C;
+.newCarPrice {
+  color: #52bd5c;
   margin: 10px 10px 0px 10px;
 }
 
-.newCarCity{
+.newCarCity {
   color: #afafaf;
   margin: 10px;
 }
 
 /* -------------------------- */
-.rectangleParent1{
+.rectangleParent1 {
   height: 613.024px;
   flex-shrink: 0;
-  background: #143F54;
+  background: #143f54;
   padding: 20px;
 }
 
@@ -465,14 +462,14 @@ footer {
   margin-top: 20px;
 }
 
-.carshopFeaturebox1Icon img{
+.carshopFeaturebox1Icon img {
   width: 40%;
   flex-shrink: 0;
   object-fit: cover;
 }
 
-.stepInsideYourContainer{
-  color: #FFF;
+.stepInsideYourContainer {
+  color: #fff;
   font-family: Roboto;
   font-size: 50px;
   font-style: normal;
@@ -481,42 +478,42 @@ footer {
   text-align: center;
 }
 
-.stepInsideYourContainer p{
+.stepInsideYourContainer p {
   margin: 20px;
 }
 
-.stepInsideYourContainer span{
-  color: #E53333;
+.stepInsideYourContainer span {
+  color: #e53333;
 }
 
-.fearureTray{
+.fearureTray {
   display: flex;
   flex-direction: row;
 }
 
-.compFeature{
+.compFeature {
   display: flex;
   flex-direction: row;
   width: 50%;
   margin-top: 30px;
-  color: #FFF;
+  color: #fff;
   font-family: Roboto;
   font-style: normal;
   line-height: normal;
 }
 
-.compFeature img{
+.compFeature img {
   width: 50px;
   margin-right: 10px;
 }
 
-.compFeature h6{
+.compFeature h6 {
   font-size: 18px;
   font-weight: 700;
   margin: 0px 20px 0px 10px;
 }
 
-.compFeature p{
+.compFeature p {
   font-size: 16px;
   font-weight: 400;
   margin: 20px 20px 0px 10px;
@@ -524,14 +521,14 @@ footer {
 
 /* ------- */
 
-.sectionBrand{
+.sectionBrand {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.textBrand{
+.textBrand {
   color: #000;
   font-family: Roboto;
   font-size: 40px;
@@ -541,36 +538,36 @@ footer {
   text-align: center;
 }
 
-.carToggle{
+.carToggle {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 20px;
   border-radius: 25px;
-  background: #F2F2F2;
+  background: #f2f2f2;
   width: 230px;
   padding: 5px;
 }
 
-.newCarOn{
+.newCarOn {
   border-radius: 25px;
-  background-color: #143F54;
-  color: #FFF;
+  background-color: #143f54;
+  color: #fff;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 700;
 }
 
-.usedCarOn{
+.usedCarOn {
   border-radius: 25px;
-  background-color: #F2F2F2;
-  color: #143F54;
+  background-color: #f2f2f2;
+  color: #143f54;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 700;
 }
 
-.brandContainer{
+.brandContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -578,27 +575,144 @@ footer {
   margin-top: 30px;
 }
 
-.carBrand{
+.carBrand {
   width: 200px;
   height: 170px;
   /* flex-shrink: 0; */
   border-radius: 10px;
   margin: 10px;
   text-align: center;
-  background-color:#0889C9;
+  background-color: #0889c9;
 }
 
-.carBrand img{
+.carBrand img {
   width: 100px;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
 }
 
-.carBrand p{
-  color: #FFF;
+.carBrand p {
+  color: #fff;
   margin: 10px;
   font-size: 18px;
   font-family: Roboto;
   font-weight: 700;
   text-align: center;
+}
+
+/* profile component styles */
+
+.profileComp {
+  background-color: #143f54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileContainer {
+  margin-top: 40px;
+  border-radius: 10px;
+  background: #fff;
+  width: 90%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textMyProfile {
+  color: #143f54;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profileHline {
+  width: 100%;
+  height: 2px;
+  background-color: #143f54;
+  margin-top: 20px;
+}
+
+.profileInfo {
+  margin: 40px 0px;
+  width: 90%;
+}
+.profileInfo form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.profileInfo div {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profileInfo input {
+  width: 50%;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 1px solid #757575;
+  background: #fff;
+  padding: 10px 15px;
+}
+
+.profileInfo label {
+  width: 30%;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.profileInfo button {
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #f27a23;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+/* Profile Component Responsive styles */
+@media (max-width: 500px) {
+  .profileInfo div {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .profileInfo input {
+    width: 80%;
+  }
+
+  .profileInfo label {
+    width: 90%;
+    text-align: left;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
 }
