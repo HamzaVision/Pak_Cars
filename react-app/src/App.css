@@ -681,6 +681,15 @@ textarea {
   padding: 10px 15px;
 }
 
+.profileInfo select {
+  width: 54%;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 1px solid #757575;
+  background: #fff;
+  padding: 10px 15px;
+}
+
 .profileInfo label {
   width: 30%;
   text-align: right;
@@ -707,6 +716,10 @@ textarea {
 
   .profileInfo input {
     width: 80%;
+  }
+
+  .profileInfo select {
+    width: 86%;
   }
 
   .profileInfo label {

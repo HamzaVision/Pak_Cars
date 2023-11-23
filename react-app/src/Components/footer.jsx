@@ -31,16 +31,16 @@ export default function Footer() {
             <h2>Follow Us</h2>
             <ul>
               <li>
-                <a href="#">Facebook</a>
+                <a href="www.facebook.com">Facebook</a>
               </li>
               <li>
-                <a href="#">Instagram</a>
+                <a href="www.facebook.com">Instagram</a>
               </li>
               <li>
-                <a href="#">Twitter</a>
+                <a href="www.facebook.com">Twitter</a>
               </li>
               <li>
-                <a href="#">Linkedin</a>
+                <a href="www.facebook.com">Linkedin</a>
               </li>
             </ul>
           </div>

@@ -10,9 +10,9 @@ export default function SignUp() {
 
   // form data
   const [formData, setFormData] = useState({
-    Username: "",
-    Password: "",
-    Email: "",
+    username: "",
+    password: "",
+    email: "",
   });
 
   const [password, setPassword] = useState({
@@ -41,7 +41,7 @@ export default function SignUp() {
     e.preventDefault();
 
     // check the password and confirm-password is same
-    if (formData.Password !== password.ConfirmPassword) {
+    if (formData.password !== password.ConfirmPassword) {
       // setError("Password and Confirm Password must match");
       // setModalIsOpen(true);
       window.alert("Password and Confirm Password must match");
@@ -63,6 +63,25 @@ export default function SignUp() {
         const data = await response.json();
         console.log(data);
         const loggedInUserId = data._id;
+
+        const responseProfile = await fetch(
+          "http://localhost:3005/api/profiles",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userId: loggedInUserId,
+              fullName: formData.username,
+            }),
+          }
+        );
+
+        if (responseProfile.ok) {
+          console.log("User Profile added successfully");
+        }
+
         history.push(`/home/${loggedInUserId}`); // route of your home page
       } else {
         // Handle error, e.g., show an error message
@@ -105,9 +124,9 @@ export default function SignUp() {
               <input
                 style={styles.labelInput}
                 type="text"
-                name="Username"
-                id="Username"
-                value={formData.Username}
+                name="username"
+                id="username"
+                value={formData.username}
                 onChange={handleInputChange}
                 placeholder="Full Name"
                 required
@@ -117,9 +136,9 @@ export default function SignUp() {
               <input
                 style={styles.labelInput}
                 type="email"
-                name="Email"
-                id="Email"
-                value={formData.Email}
+                name="email"
+                id="email"
+                value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Email"
                 required
@@ -129,9 +148,9 @@ export default function SignUp() {
               <input
                 style={styles.labelInput}
                 type="password"
-                name="Password"
-                id="Password"
-                value={formData.Password}
+                name="password"
+                id="password"
+                value={formData.password}
                 onChange={handleInputChange}
                 placeholder="Password"
                 required

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Navbar() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const { id } = useParams();
 
   const handleMenuToggle = () => {
     setMenuOpen(!isMenuOpen);
@@ -19,7 +20,7 @@ export default function Navbar() {
       <div className={`navlist ${isMenuOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to={`/home/${id}`}>Home</Link>
           </li>
           <li>
             <Link to="/NewCars">New Cars</Link>
@@ -28,7 +29,7 @@ export default function Navbar() {
             <Link to="/UsedCars">Used Cars</Link>
           </li>
           <li>
-            <Link to="/Blog">Blog</Link>
+            <Link to={`/myProfile/${id}`}>Profile</Link>
           </li>
           <li>
             <Link to="/PostAnAdd" className="post-ad-button">

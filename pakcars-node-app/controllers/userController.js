@@ -15,12 +15,18 @@ async function createUser(req, res) {
       return res.status(400).json({ error: "Email is already in use" });
     }
 
+    console.log("body");
+    console.log(req.body);
+    console.log("username ", username);
+    console.log("password ", password);
+    console.log("email ", email);
+    console.log("----------------------- ");
+
     // If the user does not exist, create a new user
     const newUser = await User.create({
       username,
       password,
       email,
-      // Add other fields as needed
     });
 
     // Send a success response

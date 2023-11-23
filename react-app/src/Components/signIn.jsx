@@ -6,7 +6,6 @@ export default function SignIn() {
 
   // form data
   const [formData, setFormData] = useState({
-    Username: "",
     Password: "",
     Email: "",
   });
@@ -30,8 +29,8 @@ export default function SignIn() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          Email: formData.Email,
-          Password: formData.Password,
+          email: formData.Email,
+          password: formData.Password,
         }),
       });
 
@@ -73,18 +72,7 @@ export default function SignIn() {
         <form onSubmit={handleSubmit}>
           <div style={styles.inputContainer}>
             <div style={styles.createAccountText}>Login to your Account</div>
-            <div style={styles.label}>
-              <input
-                style={styles.labelInput}
-                type="text"
-                name="Username"
-                id="Username"
-                value={formData.Username}
-                onChange={handleInputChange}
-                placeholder="Full Name"
-                required
-              />
-            </div>
+            {/* Email Input */}
             <div style={styles.label}>
               <input
                 style={styles.labelInput}
@@ -97,6 +85,7 @@ export default function SignIn() {
                 required
               />
             </div>
+            {/* Password Input */}
             <div style={styles.label}>
               <input
                 style={styles.labelInput}
