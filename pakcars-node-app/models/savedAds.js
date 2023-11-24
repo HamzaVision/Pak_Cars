@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
-const savedAdsSchema = new mongoose.Schema(
+const savedAdSchema = new mongoose.Schema(
   {
-    //   SavedAdId: { type: String, required: true },
-    carId: {
+    adId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Car",
+      ref: "Ad",
       required: true,
     },
     userId: {
@@ -20,6 +19,6 @@ const savedAdsSchema = new mongoose.Schema(
   }
 );
 
-const SavedAds = mongoose.model("SavedAds", savedAdsSchema);
+const SavedAd = mongoose.model("SavedAd", savedAdSchema);
 
-module.exports = SavedAds;
+module.exports = SavedAd;

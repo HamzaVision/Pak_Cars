@@ -32,7 +32,7 @@ export default function Navbar() {
             <Link to={`/myProfile/${id}`}>Profile</Link>
           </li>
           <li>
-            <Link to="/PostAnAdd" className="post-ad-button">
+            <Link to={`/postCarAdd/${id}`} className="post-ad-button">
               Post an Add
             </Link>
           </li>

@@ -4,6 +4,7 @@ import Home from "./Components/home";
 import SignUp from "./Components/signUp";
 import SignIn from "./Components/signIn";
 import Profile from "./Components/profile";
+import PostCarAdd from "./Components/postCarAdd";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/home/:id" component={Home} />
         <Route exact path="/myProfile/:id" component={Profile} />
+        <Route exact path="/postCarAdd/:id" component={PostCarAdd} />
       </Switch>
     </div>
   );

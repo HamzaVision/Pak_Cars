@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema(
   {
-    //   TransactionId: { type: String, required: true },
     transactionDate: { type: Date, required: true },
     transactionPrice: { type: Number, required: true },
     buyerId: {
@@ -15,9 +14,9 @@ const transactionSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    carId: {
+    adId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Car",
+      ref: "Ad",
       required: true,
     },
     isActive: { type: Boolean, default: true },
