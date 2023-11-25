@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 const carSchema = new mongoose.Schema(
   {
-    ownerId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
     registrationCity: { type: String, required: true },
     brandId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -28,6 +23,7 @@ const carSchema = new mongoose.Schema(
     },
     engineCapacity: { type: Number, required: true },
     price: { type: Number, required: true },
+    imagePath: { type: String, required: true },
     isActive: { type: Boolean, default: true },
   },
   {

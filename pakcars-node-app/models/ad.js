@@ -12,7 +12,6 @@ const adSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    imagePath: { type: String, required: true },
     phone: { type: String, required: true },
     address: { type: String, required: true },
     location: { type: String },
@@ -24,6 +23,6 @@ const adSchema = new mongoose.Schema(
   }
 );
 
-const Ad = mongoose.model("User", adSchema);
+const Ad = mongoose.model("Ad", adSchema);
 
 module.exports = Ad;

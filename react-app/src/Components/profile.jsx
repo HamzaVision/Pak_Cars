@@ -20,13 +20,11 @@ const MyProfile = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        // Replace 'userId' with the actual user ID or get it from your authentication system
         const userId = id;
         const response = await axios.get(
           `http://localhost:3005/api/profiles/${userId}`
         );
         console.log("Profile Data");
-        // const data = await response.json();
         console.log(response.data);
         setProfileData(response.data);
       } catch (error) {
