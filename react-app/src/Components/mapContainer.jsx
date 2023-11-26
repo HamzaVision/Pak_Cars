@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+// require("dotenv").config();
 
 const MapContainer = ({ onLocationChange }) => {
   const [map, setMap] = useState(null);

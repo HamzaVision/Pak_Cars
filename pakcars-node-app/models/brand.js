@@ -5,6 +5,7 @@ const brandSchema = new mongoose.Schema(
     brandName: { type: String, required: true },
     founderYear: { type: Number, required: true },
     description: { type: String, required: true },
+    img: { type: String },
     isActive: { type: Boolean, default: true },
   },
   {

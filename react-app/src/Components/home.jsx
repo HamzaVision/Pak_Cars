@@ -1,8 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
+import axios from "axios";
 
 export default function Home() {
+  const [brands, setBrands] = useState([]);
+  const [ads, setAds] = useState([]);
+  const [visibleRange, setVisibleRange] = useState({ start: 0, end: 3 });
+
+  useEffect(() => {
+    const fetchUsedCars = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3005/api/ads`);
+        setAds(response.data);
+      } catch (error) {
+        console.error("Error fetching used cars ads:", error);
+      }
+    };
+
+    const fetchBrands = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3005/api/brands`);
+        setBrands(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching brands:", error);
+      }
+    };
+
+    fetchBrands();
+    fetchUsedCars();
+  }, []);
+
+  const handleLeftClick = () => {
+    setVisibleRange({
+      start: Math.max(visibleRange.start - 1, 0),
+      end: Math.max(visibleRange.end - 1, 3),
+    });
+  };
+
+  const handleRightClick = () => {
+    setVisibleRange({
+      start: Math.min(visibleRange.start + 1, ads.length - 4),
+      end: Math.min(visibleRange.end + 1, ads.length - 1),
+    });
+  };
   return (
     <div>
       <Navbar />
@@ -43,101 +85,26 @@ export default function Home() {
           <p className="browseUsedCars">Browse Used Cars</p>
 
           <div className="usedCarCards">
-            <div className="leftBtnUsed">
-              <img src="/images/left-solid.svg" alt="" />
-            </div>
-            <div className="usedCarCard">
-              <img
-                className="usedCarImage"
-                alt=""
-                src="/images/used car 5.webp"
-              />
-              <h3 className="usedCarName">Toyota Vitz 2013</h3>
-              <h4 className="usedCarPrice">PKR 2,785,000</h4>
-              <div className="usedCarCity">Lahore</div>
-            </div>
-
-            <div className="usedCarCard">
-              <img
-                className="usedCarImage"
-                alt=""
-                src="/images/used car 5.webp"
-              />
-              <h3 className="usedCarName">Toyota Vitz 2013</h3>
-              <h4 className="usedCarPrice">PKR 2,785,000</h4>
-              <div className="usedCarCity">Lahore</div>
-            </div>
-
-            <div className="usedCarCard">
-              <img
-                className="usedCarImage"
-                alt=""
-                src="/images/used car 5.webp"
-              />
-              <h3 className="usedCarName">Toyota Vitz 2013</h3>
-              <h4 className="usedCarPrice">PKR 2,785,000</h4>
-              <div className="usedCarCity">Lahore</div>
-            </div>
-
-            <div className="usedCarCard">
-              <img
-                className="usedCarImage"
-                alt=""
-                src="/images/used car 5.webp"
-              />
-              <h3 className="usedCarName">Toyota Vitz 2013</h3>
-              <h4 className="usedCarPrice">PKR 2,785,000</h4>
-              <div className="usedCarCity">Lahore</div>
-            </div>
-
-            <div className="leftBtnUsed">
-              <img src="/images/right-solid.svg" alt="" />
-            </div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-
-        {/* Browse New Cars Section */}
-
-        <div className="browseUsedCarsBox">
-          <p className="browseUsedCars">Featured New Cars</p>
-
-          <div className="newCarCards">
-            <div className="leftBtnNew">
+            <div className="leftBtnUsed" onClick={handleLeftClick}>
               <img src="/images/left-solid.svg" alt="" />
             </div>
 
-            <div className="newCarCard">
-              <img className="newCarImage" alt="" src="/images/new car 2.jpg" />
-              <h3 className="newCarName">Honda City</h3>
-              <h4 className="newCarPrice">PKR 2,785,000</h4>
-              <div className="newCarCity">⭐⭐⭐⭐⭐</div>
+            <div className="adsList">
+              {ads.slice(visibleRange.start, visibleRange.end + 1).map((ad) => (
+                <div key={ad._id} className="usedCarCard">
+                  <img
+                    className="usedCarImage"
+                    alt=""
+                    src="/images/used car 5.webp"
+                  />
+                  <h3 className="usedCarName">{`${ad.carId.model} ${ad.carId.year}`}</h3>
+                  <h4 className="usedCarPrice">{`PKR ${ad.carId.price}`}</h4>
+                  <div className="usedCarCity">{ad.carId.registrationCity}</div>
+                </div>
+              ))}
             </div>
 
-            <div className="newCarCard">
-              <img className="newCarImage" alt="" src="/images/new car 2.jpg" />
-              <h3 className="newCarName">Honda City</h3>
-              <h4 className="newCarPrice">PKR 2,785,000</h4>
-              <div className="newCarCity">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            <div className="newCarCard">
-              <img className="newCarImage" alt="" src="/images/new car 2.jpg" />
-              <h3 className="newCarName">Honda City</h3>
-              <h4 className="newCarPrice">PKR 2,785,000</h4>
-              <div className="newCarCity">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            <div className="newCarCard">
-              <img className="newCarImage" alt="" src="/images/new car 2.jpg" />
-              <h3 className="newCarName">Honda City</h3>
-              <h4 className="newCarPrice">PKR 2,785,000</h4>
-              <div className="newCarCity">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            <div className="leftBtnUsed">
+            <div className="leftBtnUsed" onClick={handleRightClick}>
               <img src="/images/right-solid.svg" alt="" />
             </div>
           </div>
@@ -206,73 +173,13 @@ export default function Home() {
         <div className="sectionBrand">
           <p className="textBrand">Shop your favorite brand</p>
 
-          <div className="carToggle">
-            <div className="newCarOn">New Car</div>
-            <div className="usedCarOn">Used Car</div>
-          </div>
-
           <div className="brandContainer">
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-          </div>
-
-          <div className="brandContainer">
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
-
-            <div className="carBrand">
-              <img alt="" src="/images/Honda.png" />
-              <p>Honda</p>
-            </div>
+            {brands.map((brand, index) => (
+              <div key={index} className="carBrand">
+                <img alt={brand.brandName} src="/images/Honda.png" />
+                <p>{brand.brandName}</p>
+              </div>
+            ))}
           </div>
         </div>
 

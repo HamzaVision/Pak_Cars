@@ -347,7 +347,43 @@ textarea {
   width: 100%;
 }
 
-/*  */
+@media (max-width: 800px) {
+  .rectangleBannerDiv {
+    height: 100%;
+  }
+
+  .greatQualityCars {
+    font-size: 34px;
+    margin: 20px 0px 0px 20px;
+  }
+
+  .container11Icon {
+    width: 70%;
+  }
+
+  .searchBoxRectangle {
+    height: 100%;
+  }
+
+  .findUsedCar {
+    font-size: 34px;
+  }
+
+  .thousandsOfNew {
+    font-size: 14px;
+  }
+
+  .searchBox {
+    width: 100%;
+    height: 40px;
+  }
+
+  .carMakeOr {
+    width: 100%;
+  }
+}
+
+/* used cars section */
 
 .browseUsedCarsBox {
   background-color: #f2f3f3;
@@ -362,6 +398,14 @@ textarea {
   font-weight: 800;
   line-height: normal;
   margin: 0px 0px 0px 50px;
+}
+
+.leftBtnUsed img:hover {
+  cursor: pointer;
+}
+
+.rightBtnUsed img:hover {
+  cursor: pointer;
 }
 
 .usedCarCards {
@@ -405,46 +449,26 @@ textarea {
   margin: 10px;
 }
 
-.newCarCards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+.adsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.newCarCard {
-  width: 200px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #fff;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin: 10px;
-  text-align: center;
+@media (max-width: 1025px) {
+  .adsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
-.newCarCard img {
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
-  object-fit: cover;
-}
-
-.newCarName {
-  color: #324a84;
-  margin: 10px 10px 0px 10px;
-}
-
-.newCarPrice {
-  color: #52bd5c;
-  margin: 10px 10px 0px 10px;
-}
-
-.newCarCity {
-  color: #afafaf;
-  margin: 10px;
+@media (max-width: 550px) {
+  .adsList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
 }
 
 /* -------------------------- */
@@ -519,6 +543,51 @@ textarea {
   margin: 20px 20px 0px 10px;
 }
 
+@media (max-width: 800px) {
+  .rectangleParent1 {
+    height: 100%;
+    flex-shrink: 0;
+    background: #143f54;
+    padding: 20px;
+  }
+
+  .carshopFeaturebox1Icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .carshopFeaturebox1Icon img {
+    width: 70%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .stepInsideYourContainer {
+    font-size: 34px;
+  }
+
+  .fearureTray {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .compFeature {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .compFeature img {
+    width: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 /* ------- */
 
 .sectionBrand {
@@ -538,55 +607,26 @@ textarea {
   text-align: center;
 }
 
-.carToggle {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 20px;
-  border-radius: 25px;
-  background: #f2f2f2;
-  width: 230px;
-  padding: 5px;
-}
-
-.newCarOn {
-  border-radius: 25px;
-  background-color: #143f54;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.usedCarOn {
-  border-radius: 25px;
-  background-color: #f2f2f2;
-  color: #143f54;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
 .brandContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 brands in one row */
+  gap: 20px; /* Adjust the gap as needed */
   margin-top: 30px;
 }
 
 .carBrand {
   width: 200px;
-  height: 170px;
-  /* flex-shrink: 0; */
+  height: 180px;
   border-radius: 10px;
-  margin: 10px;
   text-align: center;
   background-color: #0889c9;
+  overflow: hidden;
+  padding: 5px;
 }
 
 .carBrand img {
-  width: 100px;
+  width: 70%;
+  height: 70%;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
 }
@@ -598,6 +638,31 @@ textarea {
   font-family: Roboto;
   font-weight: 700;
   text-align: center;
+}
+
+@media (max-width: 940px) {
+  /* For smaller screens, display 2 brands in one row */
+  .brandContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .textBrand {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 490px) {
+  .carBrand {
+    width: 100px;
+    height: 90px;
+  }
+
+  .carBrand p {
+    font-size: 14px;
+  }
+  .brandContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* profile component styles */

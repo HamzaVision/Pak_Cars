@@ -319,19 +319,21 @@ export default function PostCarAdd() {
 
             {/* form for inputs */}
             <div className="PostCarInfo">
-              {/* Upload Photo Preview */}
-              <div className="uploadPhotoPreview">
-                <img src={carData.imagePath} alt="" />
-              </div>
+              <center>
+                {/* Upload Photo Preview */}
+                <div className="uploadPhotoPreview">
+                  <img src={carData.imagePath} alt="" />
+                </div>
 
-              {/* File Input for Image Upload */}
-              <input
-                type="file"
-                name="imagePath"
-                onChange={handleInputChange}
-                required
-                accept="image/*"
-              />
+                {/* File Input for Image Upload */}
+                <input
+                  type="file"
+                  name="imagePath"
+                  onChange={handleInputChange}
+                  required
+                  accept="image/*"
+                />
+              </center>
             </div>
           </div>
 

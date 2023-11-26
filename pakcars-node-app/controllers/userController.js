@@ -8,19 +8,11 @@ async function createUser(req, res) {
   try {
     // Check if a user with the same email already exists
     const existingUser = await User.findOne({ email });
-    console.log("Sign UP");
-    console.log(existingUser);
+
     if (existingUser) {
       // If user already exists, send a message indicating that the email is already in use
       return res.status(400).json({ error: "Email is already in use" });
     }
-
-    console.log("body");
-    console.log(req.body);
-    console.log("username ", username);
-    console.log("password ", password);
-    console.log("email ", email);
-    console.log("----------------------- ");
 
     // If the user does not exist, create a new user
     const newUser = await User.create({
@@ -91,14 +83,12 @@ async function admindasbhard(req, res) {
 
 // login a User
 async function login(req, res, next) {
-  console.log(req.body);
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
-    console.log("Login");
-    console.log(email);
+
     if (!user) return res.status(404).json({ error: "User not found" });
-    console.log(user.password + "  " + password);
+
     if (user.password != password)
       return res.status(401).json({ error: "Invalid credentials" });
     var token = GenerateToken(user);
@@ -113,14 +103,13 @@ async function login(req, res, next) {
   }
 }
 
-// helping function
 //generating token
 function GenerateToken(user) {
   const payload = {
     role: user.role,
     id: user._id,
   };
-  const token = jwt.sign(payload, "123");
+  const token = jwt.sign(payload, "hamza123@5430---121[]23812213hdsd");
   return token;
 }
 
