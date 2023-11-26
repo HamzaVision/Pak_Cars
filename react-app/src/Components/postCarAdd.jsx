@@ -145,7 +145,7 @@ export default function PostCarAdd() {
 
       // Navigate to the home page
       window.alert("Ad posted successfully!");
-      history.push(`/home/${id}`);
+      history.push(`/myAds/${id}`);
     } catch (error) {
       console.error("Error:", error);
       window.alert("An error occurred. Please try again.");

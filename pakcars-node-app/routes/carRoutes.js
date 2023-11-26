@@ -18,10 +18,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Routes for Car CRUD operations
-router.post("/cars", upload.single("image"), carController.createCar);
+router.post("/cars", upload.single("imagePath"), carController.createCar);
 router.get("/cars", carController.getAllCars);
 router.get("/cars/:id", carController.getCarById);
-router.put("/cars/:id", upload.single("image"), carController.updateCar);
+router.put("/cars/:id", upload.single("imagePath"), carController.updateCar);
 router.delete("/cars/:id", carController.deleteCar);
 
 module.exports = router;

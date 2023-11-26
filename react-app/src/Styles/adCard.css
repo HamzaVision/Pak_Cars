@@ -1,0 +1,79 @@
+/* adCard.css */
+
+.ad-card {
+  border: 1px solid #ddd;
+  margin: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.ad-image {
+  width: 50%;
+  /* max-width: 80%; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  flex-shrink: 0;
+}
+
+.ad-image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.ad-details {
+  flex-grow: 1;
+}
+
+.ad-details h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #143f54;
+}
+
+.ad-details p {
+  margin: 5px 0;
+}
+
+.ad-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+.ad-buttons button {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.ad-buttons button:hover {
+  background-color: #45a049;
+}
+
+.soldTag {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .ad-card {
+    flex-direction: column;
+  }
+
+  .ad-image {
+    width: 100%;
+  }
+}

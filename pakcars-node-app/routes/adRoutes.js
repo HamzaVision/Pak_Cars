@@ -5,8 +5,11 @@ const adController = require("../controllers/adController");
 // Routes for Ad CRUD operations
 router.post("/ads", adController.createAd);
 router.get("/ads", adController.getAllAds);
-router.get("/ads/:id", adController.getAdById);
-router.put("/ads/:id", adController.updateAd);
-router.delete("/ads/:id", adController.deleteAd);
+router.get("/ads/:adId", adController.getAdById);
+router.put("/ads/:adId", adController.updateAd);
+router.delete("/ads/:adId", adController.deleteAd);
+
+// Route to get all ads posted by a specific user
+router.get("/ads/user/:userId", adController.getAllAdsByUser);
 
 module.exports = router;

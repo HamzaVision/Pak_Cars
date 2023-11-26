@@ -23,10 +23,10 @@ export default function Navbar() {
             <Link to={`/home/${id}`}>Home</Link>
           </li>
           <li>
-            <Link to="/NewCars">New Cars</Link>
+            <Link to="/usedCars">Buy Cars</Link>
           </li>
           <li>
-            <Link to="/UsedCars">Used Cars</Link>
+            <Link to={`/myAds/${id}`}>My Ads</Link>
           </li>
           <li>
             <Link to={`/myProfile/${id}`}>Profile</Link>
