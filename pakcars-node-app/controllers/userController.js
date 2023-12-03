@@ -1,3 +1,16 @@
+/* 
+    The userController contains all the functions that are used to perform CRUD operations on the User model.
+    And for the Login and SignUp routes, it also contains the login function.
+
+    The controller functions are:
+    - createUser
+    - getAllUsers
+    - getUserById
+    - updateUser
+    - deleteUser
+    - login
+*/
+
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 

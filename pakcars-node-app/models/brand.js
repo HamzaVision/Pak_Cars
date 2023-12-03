@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema for the brand of the car in the database.
+*/
 const mongoose = require("mongoose");
 
 const brandSchema = new mongoose.Schema(

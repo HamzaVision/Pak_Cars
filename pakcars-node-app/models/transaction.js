@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema definition for the transaction model.
+*/
 const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema(

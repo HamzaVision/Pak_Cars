@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema for the user model
+*/
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(

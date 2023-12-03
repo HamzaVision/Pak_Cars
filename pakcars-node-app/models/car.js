@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema for the car model.
+*/
 const mongoose = require("mongoose");
 
 const carSchema = new mongoose.Schema(

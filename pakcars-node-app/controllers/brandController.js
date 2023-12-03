@@ -1,6 +1,14 @@
-const Brand = require("../models/brand");
+/* 
+  This is the controller file of thr brand model.
 
-// Controller for handling brand-related operations
+  It contains the following functions:
+  - getAllBrands
+  - getBrandById
+  - createBrand
+
+  Each function uses the Brand model to perform CRUD operations on the database.
+*/
+const Brand = require("../models/brand");
 
 // Get all brands
 const getAllBrands = async (req, res) => {

@@ -1,3 +1,7 @@
+/*
+  This file is used to connect with the database.
+*/
+
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 

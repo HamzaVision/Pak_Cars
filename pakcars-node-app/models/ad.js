@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema for the ad model
+*/
 const mongoose = require("mongoose");
 
 const adSchema = new mongoose.Schema(

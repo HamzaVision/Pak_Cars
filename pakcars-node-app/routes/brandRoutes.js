@@ -1,3 +1,6 @@
+/*
+    This file contains the routes for brand-related operations.
+*/
 const express = require("express");
 const router = express.Router();
 const brandController = require("../controllers/brandController");

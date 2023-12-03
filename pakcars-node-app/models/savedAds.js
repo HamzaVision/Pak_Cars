@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema definition for the savedAds collection in the database.
+*/
 const mongoose = require("mongoose");
 
 const savedAdSchema = new mongoose.Schema(

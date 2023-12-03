@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema definition for the feature model.
+*/
 const mongoose = require("mongoose");
 
 const featureSchema = new mongoose.Schema(

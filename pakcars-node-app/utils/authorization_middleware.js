@@ -1,3 +1,7 @@
+/*
+ * This file contains the middleware functions for validating JWT tokens and checking user roles.
+ */
+
 const jwt = require("jsonwebtoken");
 // Middleware function to validate JWT tokens
 

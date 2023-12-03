@@ -1,3 +1,6 @@
+/* 
+  This file contains the schema for the profile of the user in the database.
+*/
 const mongoose = require("mongoose");
 
 const profileSchema = new mongoose.Schema(

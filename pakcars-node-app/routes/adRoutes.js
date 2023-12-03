@@ -1,3 +1,7 @@
+/*
+    This file contains the routes for Ad CRUD operations and
+    getting all ads posted by a specific user.
+*/
 const express = require("express");
 const router = express.Router();
 const adController = require("../controllers/adController");

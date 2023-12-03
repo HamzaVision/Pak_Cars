@@ -1,3 +1,15 @@
+/* 
+  This file contains the controller functions for the profile routes
+
+  Each controller function uses the Profile model to perform CRUD operations on the database.
+
+  The controller functions are:
+  - createProfile
+  - getAllProfiles
+  - getProfileByUserId
+  - updateProfileByUserId
+  - deleteProfileByUserId
+*/
 const Profile = require("../models/profile");
 
 // Controller function to create a new profile

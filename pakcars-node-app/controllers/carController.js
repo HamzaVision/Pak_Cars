@@ -1,3 +1,15 @@
+/*
+  This file contains the controllers for the car routes.
+
+  This file contains the following functions:
+  - createCar
+  - getAllCars
+  - getCarById
+  - updateCar
+  - deleteCar
+
+  Each function uses the Car model to perform CRUD operations on the database.
+*/
 const Car = require("../models/car");
 
 // Controller to create a new car

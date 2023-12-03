@@ -1,3 +1,16 @@
+/*
+  This file is the controller for the ad model
+
+  It contains the following functions:
+  - createAd
+  - getAllAds
+  - getAdById
+  - getAllAdsByUser
+  - updateAd
+  - deleteAd
+
+  Each function uses the Ad model to perform CRUD operations on the database.
+*/
 const Ad = require("../models/ad");
 
 // Controller to create a new ad
