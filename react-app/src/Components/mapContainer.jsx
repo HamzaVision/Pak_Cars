@@ -1,6 +1,19 @@
+/*
+  This component is used to display the map on the screen.
+  It takes the following props:
+  1. onLocationChange: A function to update the location
+
+  It is used in the postCarAdd component.
+
+  It uses the following APIs:
+  1. Google Maps API
+
+  It uses the following env variables:
+  1. REACT_APP_GOOGLE_MAPS_API_KEY
+*/
 import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-// require("dotenv").config();
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const MapContainer = ({ onLocationChange }) => {
   const [map, setMap] = useState(null);
@@ -38,7 +51,7 @@ const MapContainer = ({ onLocationChange }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDEhr2LJnyoNt6wO5JUraz27F04PowVhzQ">
+    <LoadScript googleMapsApiKey={apiKey}>
       <GoogleMap
         mapContainerStyle={{
           width: "100%",

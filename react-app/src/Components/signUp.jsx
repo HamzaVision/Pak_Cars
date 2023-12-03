@@ -1,3 +1,9 @@
+/*
+  This component is used to create a new user account
+  It takes the input from the user and sends it to the backend to create a new user
+  It uses the following env variables:
+  1. REACT_APP_BACKEND_URL
+*/
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Modal from "react-modal";
@@ -49,13 +55,16 @@ export default function SignUp() {
     }
 
     try {
-      const response = await fetch("http://localhost:3005/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/users`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         // Handle success, e.g., redirect or show a success message
@@ -65,7 +74,7 @@ export default function SignUp() {
         const loggedInUserId = data._id;
 
         const responseProfile = await fetch(
-          "http://localhost:3005/api/profiles",
+          `${process.env.REACT_APP_BACKEND_URL}/api/profiles`,
           {
             method: "POST",
             headers: {
@@ -153,6 +162,7 @@ export default function SignUp() {
                 value={formData.password}
                 onChange={handleInputChange}
                 placeholder="Password"
+                minLength={8}
                 required
               />
             </div>
@@ -165,6 +175,7 @@ export default function SignUp() {
                 value={password.ConfirmPassword}
                 onChange={handlePasswordChange}
                 placeholder="Confirm Password"
+                minLength={8}
                 required
               />
             </div>

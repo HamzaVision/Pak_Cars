@@ -1,7 +1,20 @@
+/* 
+  This component is used to render the footer of the website.
+  It takes the following props:
+  1. id: The user ID
+  
+  It is used in the other components as follows:
+  1. home.jsx
+  2. usedCars.jsx
+  3. myAds.jsx
+  4. myProfile.jsx
+  5. postCarAdd.jsx
+*/
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Footer() {
+  const { id } = useParams();
   return (
     <footer>
       <div>
@@ -10,19 +23,19 @@ export default function Footer() {
             <h2>Navigation</h2>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to={`/home/${id}`}>Home</Link>
               </li>
               <li>
-                <Link to="/">Used Cars</Link>
+                <Link to="/usedCars">Buy Cars</Link>
               </li>
               <li>
-                <Link to="/">New Cars</Link>
+                <Link to={`/myAds/${id}`}>My Ads</Link>
               </li>
               <li>
-                <Link to="/">Blogs</Link>
+                <Link to={`/myProfile/${id}`}>Profile</Link>
               </li>
               <li>
-                <Link to="/">Post an Add</Link>
+                <Link to={`/postCarAdd/${id}`}>Post an Add</Link>
               </li>
             </ul>
           </div>

@@ -1,3 +1,10 @@
+/* 
+  This component is used to render the sign in page. 
+  It takes the email and password and sends it to the backend for authentication.
+  
+  It uses the following env variables:
+  1. REACT_APP_BACKEND_URL
+*/
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
@@ -23,16 +30,19 @@ export default function SignIn() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3005/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.Email,
-          password: formData.Password,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.Email,
+            password: formData.Password,
+          }),
+        }
+      );
 
       if (response.ok) {
         // Handle successful login, e.g., redirect to home page

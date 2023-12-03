@@ -1,3 +1,16 @@
+/* 
+  This component is used to display all the ads posted by the user.
+  It takes the following props:
+  1. userId: The user ID
+
+  It uses the following env variables:
+  1. REACT_APP_BACKEND_URL
+
+  It renders the following components:
+  1. Navbar
+  2. Footer
+  3. AdCard
+*/
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -17,7 +30,7 @@ const MyAds = ({ userId }) => {
       try {
         console.log("Fetching posted ads for user:", id);
         const response = await axios.get(
-          `http://localhost:3005/api/ads/user/${id}`
+          `${process.env.REACT_APP_BACKEND_URL}/api/ads/user/${id}`
         );
         setPostedAds(response.data);
       } catch (error) {

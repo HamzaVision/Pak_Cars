@@ -1,4 +1,8 @@
-/* adCard.css */
+/*
+  adCard.css 
+  This file contains the styling for the ad card component 
+  used in the ad list and ad details components 
+*/
 
 .ad-card {
   border: 1px solid #ddd;

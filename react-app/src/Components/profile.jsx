@@ -1,3 +1,15 @@
+/*
+  This component is used to display the user profile data and update it.
+  It takes the following props:
+  1. id: The user ID
+
+  It uses the following env variables:
+  1. REACT_APP_BACKEND_URL
+
+  It renders the following components:
+  1. Navbar
+  2. Footer
+*/
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -22,11 +34,23 @@ const MyProfile = () => {
       try {
         const userId = id;
         const response = await axios.get(
-          `http://localhost:3005/api/profiles/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/api/profiles/${userId}`
         );
-        console.log("Profile Data");
-        console.log(response.data);
         setProfileData(response.data);
+
+        const userDob = new Date(response.data.dob);
+        // Format the date as "yyyy-mm-dd" for the input field with type "date"
+        const formattedDate = `${userDob.getFullYear()}-${(
+          userDob.getMonth() + 1
+        )
+          .toString()
+          .padStart(2, "0")}-${userDob.getDate().toString().padStart(2, "0")}`;
+
+        console.log("formattedDate", formattedDate);
+        setProfileData((prevData) => ({
+          ...prevData,
+          dob: formattedDate,
+        }));
       } catch (error) {
         console.error("Error fetching user profile:", error);
       }
@@ -43,7 +67,7 @@ const MyProfile = () => {
       // Replace 'userId' with the actual user ID or get it from your authentication system
       const userId = id;
       await axios.put(
-        `http://localhost:3005/api/profiles/${userId}`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/profiles/${userId}`,
         profileData
       );
       console.log("Profile updated successfully");

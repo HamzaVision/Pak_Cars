@@ -1,3 +1,13 @@
+/*
+  This component is used to display an ad card on the myAds component.
+  It is used in the user dashboard component.
+  It takes the following props:
+  1. carData: An object containing the car details
+  2. adData: An object containing the ad details
+  3. onDelete: A function to re-render the component after deleting an ad
+  4. onUpdate: A function to update the ad
+*/
+
 import React from "react";
 import "../Styles/adCard.css";
 
@@ -15,7 +25,7 @@ const AdCard = ({ carData, adData, onDelete, onUpdate }) => {
     try {
       // Make a PUT request to update isActive to false
       const response = await fetch(
-        `http://localhost:3005/api/ads/${adData._id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/ads/${adData._id}`,
         {
           method: "PUT",
           headers: {

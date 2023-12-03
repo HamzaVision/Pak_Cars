@@ -1,3 +1,14 @@
+/*
+  This file is the home page of the website. It contains the following components:
+  1. Navbar
+  2. Rectangle Banner
+  3. Search Box
+  4. Browse Used Cars
+  5. Features
+  6. Favourite Brands
+  7. Footer
+*/
+
 import React, { useState, useEffect } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
@@ -11,7 +22,9 @@ export default function Home() {
   useEffect(() => {
     const fetchUsedCars = async () => {
       try {
-        const response = await axios.get(`http://localhost:3005/api/ads`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/ads`
+        );
         setAds(response.data);
       } catch (error) {
         console.error("Error fetching used cars ads:", error);
@@ -20,9 +33,10 @@ export default function Home() {
 
     const fetchBrands = async () => {
       try {
-        const response = await axios.get(`http://localhost:3005/api/brands`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/brands`
+        );
         setBrands(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching brands:", error);
       }

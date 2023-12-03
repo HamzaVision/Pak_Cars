@@ -1,3 +1,16 @@
+/* 
+  This component is used to post a new car ad. It contains a form to enter car data and ad data.
+  It takes the following props:
+  1. id: The user ID
+
+  It uses the following env variables:
+  1. REACT_APP_BACKEND_URL
+
+  It renders the following components:
+  1. Navbar
+  2. Footer
+  3. MapContainer
+*/
 import "../Styles/postCarAdd.css";
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
@@ -39,7 +52,7 @@ export default function PostCarAdd() {
   useEffect(() => {
     // Fetch data from MongoDB
     axios
-      .get("http://localhost:3005/api/brands") // API endpoint for car brands
+      .get(`${process.env.REACT_APP_BACKEND_URL}/api/brands`) // API endpoint for car brands
       .then((response) => {
         setBrands(response.data);
       })

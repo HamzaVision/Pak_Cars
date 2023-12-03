@@ -1,3 +1,8 @@
+/*
+  This component is used to display the navbar on the top of the page.
+  It takes the following props:
+  1. id: The user ID
+*/
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
